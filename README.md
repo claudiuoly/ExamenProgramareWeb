@@ -35,3 +35,10 @@ npm run parse-questions
 - `quiz-app/public/questions.json` — datele încărcate de aplicație
 - `quiz-app/` — aplicația Angular
 
+## Credite
+
+Grilele au fost extrase și compilate din materialele publice:
+
+- [TudorMurariu/UBB-INFO — Web/Sesiune/Sub](https://github.com/TudorMurariu/UBB-INFO/tree/main/an2/Semestrul2/Web/Sesiune/Sub)
+- [antonia-04/UBB-Informatica-Computer-Science — Programare Web/Examen](https://github.com/antonia-04/UBB-Informatica-Computer-Science/tree/main/Anul%202/Semestrul%202/Programare%20Web/Examen)
+
