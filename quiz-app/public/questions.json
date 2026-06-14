@@ -434,7 +434,7 @@
     {
       "id": 20,
       "category": "HTML / DOM / CSS",
-      "text": "Fie următoarea secvență de cod HTML/CSS. Pe ce fundal va fi afișat textul \"Cocosul canta\"?\n#id2 { background-color: blue; }\ndiv #id1 .class2 { background-color: green; }\ndiv .class1 #id2 { background-color: yellow; }\n#id1 { background-color: red; }\n<div class=\"class1\" id=\"id1\">\n<div class=\"class2\" id=\"id2\">Cocosul canta</div>\n</div>",
+      "text": "Fie următoarea secvență de cod HTML/CSS. Pe ce fundal va fi afișat textul \"Cocosul canta\"?\n<style type=\"text/css\">\n#id2 {\nbackground-color: blue;\n}\ndiv #id1 .class2 {\nbackground-color: green;\n}\ndiv .class1 #id2 {\nbackground-color: yellow;\n}\n#id1 {\nbackground-color: red;\n}\n</style>\n<div>\n<div class=\"class1\" id=\"id1\">\n<div class=\"class2\" id=\"id2\">\nCocosul canta\n</div>\n</div>\n</div>",
       "options": [
         {
           "text": "Roșu",

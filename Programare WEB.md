@@ -125,16 +125,31 @@
 
 **20. Pe ce fundal va fi afișat textul „Cocosul canta"?**
 
-```css
-#id2 { background-color: blue; }
-div #id1 .class2 { background-color: green; }
-div .class1 #id2 { background-color: yellow; }
-#id1 { background-color: red; }
-```
-
 ```html
-<div class="class1" id="id1">
-  <div class="class2" id="id2">Cocosul canta</div>
+<style type="text/css">
+#id2 {
+    background-color: blue;
+}
+
+div #id1 .class2 {
+    background-color: green;
+}
+
+div .class1 #id2 {
+    background-color: yellow;
+}
+
+#id1 {
+    background-color: red;
+}
+</style>
+
+<div>
+    <div class="class1" id="id1">
+        <div class="class2" id="id2">
+            Cocosul canta
+        </div>
+    </div>
 </div>
 ```
 
