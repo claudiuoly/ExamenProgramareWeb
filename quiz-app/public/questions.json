@@ -442,7 +442,7 @@
         },
         {
           "text": "Galben",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "Albastru",
@@ -450,7 +450,7 @@
         },
         {
           "text": "Verde",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },

@@ -154,9 +154,9 @@ div .class1 #id2 {
 ```
 
 - Roșu
-- Galben
+- ✅ **Galben** (`div #id1 .class2` și `div .class1 #id2` au aceeași specificitate; câștigă regula de mai jos)
 - Albastru
-- ✅ **Verde** (`div #id1 .class2` are specificitate mai mare)
+- Verde
 
 **21. Care va fi culoarea și înălțimea div-ului cu `id="id1"`?**
 

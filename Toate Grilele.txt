@@ -146,9 +146,9 @@ div .class1 #id2 {
 </div>
 
 - Roșu
-- Galben
+- [X] Galben
 - Albastru
-- [X] Verde
+- Verde
 
 21. Dacă sunt definite următoarele stiluri: <style> #id1 { height: 100px; background-color: red; } </style> <style> #id1 { background-color: blue; } </style> Care va fi culoarea și înălțimea div-ului cu id-ul "id1"?
 - culoare = red, înălțime = 100px
