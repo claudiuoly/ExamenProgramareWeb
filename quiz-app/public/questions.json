@@ -1,6 +1,6 @@
 {
   "title": "Grile Programare Web",
-  "totalQuestions": 96,
+  "totalQuestions": 99,
   "questions": [
     {
       "id": 1,
@@ -334,7 +334,7 @@
           "isCorrect": false
         },
         {
-          "text": "body{color:#abc}",
+          "text": "body{color:#aabbcc}",
           "isCorrect": true
         },
         {
@@ -361,7 +361,7 @@
           "isCorrect": false
         },
         {
-          "text": "<style>",
+          "text": "style",
           "isCorrect": true
         }
       ]
@@ -798,7 +798,7 @@
         },
         {
           "text": "Selectorul :visible se folosește pentru a selecta elementele care au visibility:hidden și opacity:0",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "Selectorul :visible se folosește pentru a selecta toate elementele care ocupă spațiu în pagină",
@@ -855,7 +855,7 @@
           "isCorrect": false
         },
         {
-          "text": "$(document).myelem și $(\"myelem\")",
+          "text": "$(document).myelem și $(\"#myelem\")[0]",
           "isCorrect": false
         },
         {
@@ -863,7 +863,7 @@
           "isCorrect": true
         },
         {
-          "text": "$(\"#myelem\") și document.getElementById(\"myelem\")",
+          "text": "$(\"#myelem\")[0] și document.getElementById(\"myelem\")",
           "isCorrect": true
         },
         {
@@ -1209,7 +1209,7 @@
       "options": [
         {
           "text": "valoarea unui input readonly poate fi modificată din JavaScript pe când cea a unui input disabled nu poate fi editată nici din JavaScript",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "atributele specifică același lucru, faptul ca un input readonly sau disabled nu poate fi editat",
@@ -1247,6 +1247,29 @@
     {
       "id": 55,
       "category": "HTTP, Servere Web & Formulare",
+      "text": "Care dintre următoarele metode HTTP nu presupun trimiterea de conținut în cadrul unei cereri HTTP?",
+      "options": [
+        {
+          "text": "GET",
+          "isCorrect": true
+        },
+        {
+          "text": "POST",
+          "isCorrect": false
+        },
+        {
+          "text": "PUT",
+          "isCorrect": false
+        },
+        {
+          "text": "HEAD",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele antete sunt obligatorii pentru o cerere HTTP în cazul folosirii protocolului HTTP/1.1:",
       "options": [
         {
@@ -1268,7 +1291,7 @@
       ]
     },
     {
-      "id": 56,
+      "id": 57,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre informațiile de mai jos despre un URL accesat prin POST sunt adevărate:",
       "options": [
@@ -1287,7 +1310,7 @@
       ]
     },
     {
-      "id": 57,
+      "id": 58,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Un client face o cerere iar serverul îi răspunde cu \"404 Not Found\". Care dintre următoarele afirmații sunt adevărate:",
       "options": [
@@ -1306,7 +1329,7 @@
       ]
     },
     {
-      "id": 58,
+      "id": 59,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Un URL de pe back-end poate fi invocat (cerut) atât prin GET cât și prin POST:",
       "options": [
@@ -1325,7 +1348,7 @@
       ]
     },
     {
-      "id": 59,
+      "id": 60,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Pe ce nivel al stivei TCP/IP se situează protocolul HTTP?",
       "options": [
@@ -1348,7 +1371,7 @@
       ]
     },
     {
-      "id": 60,
+      "id": 61,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele reprezintă un avantaj al metodei GET față de POST?",
       "options": [
@@ -1371,7 +1394,7 @@
       ]
     },
     {
-      "id": 61,
+      "id": 62,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Cărui fișier i se trimit datele când se dă submit la următorul formular?",
       "options": [
@@ -1390,7 +1413,7 @@
       ]
     },
     {
-      "id": 62,
+      "id": 63,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care este un query string posibil dacă se dă submit la următorul formular?",
       "options": [
@@ -1413,7 +1436,7 @@
       ]
     },
     {
-      "id": 63,
+      "id": 64,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Cum este posibil să existe 2 butoane de submit într-un formular?",
       "options": [
@@ -1432,7 +1455,7 @@
       ]
     },
     {
-      "id": 64,
+      "id": 65,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "De pe client se dorește salvarea unor date despre o persoană (numele și vârsta acesteia) folosind un apel AJAX realizat prin metoda HTTP GET. Care dintre următoarele apeluri realizează acest lucru:",
       "options": [
@@ -1451,7 +1474,7 @@
       ]
     },
     {
-      "id": 65,
+      "id": 66,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Un apel AJAX se poate face către o resursă statică oferită de end-point-ul de pe server?",
       "options": [
@@ -1470,7 +1493,7 @@
       ]
     },
     {
-      "id": 66,
+      "id": 67,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "În ce condiții metoda send pe un obiect AJAX se apelează întotdeauna cu parametrul șirul vid?",
       "options": [
@@ -1489,7 +1512,7 @@
       ]
     },
     {
-      "id": 67,
+      "id": 68,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Care dintre următoarele metode jQuery folosesc AJAX:",
       "options": [
@@ -1512,7 +1535,7 @@
       ]
     },
     {
-      "id": 68,
+      "id": 69,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Aranjați în ordine, de la cea mai simplă și puțin customizabilă, la cea mai configurabilă și parametrizabilă următoarele funcții care permit realizarea unui apel AJAX din jQuery:",
       "options": [
@@ -1535,7 +1558,7 @@
       ]
     },
     {
-      "id": 69,
+      "id": 70,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Pentru a verifica succesul unui apel AJAX trebuie ca:",
       "options": [
@@ -1558,7 +1581,7 @@
       ]
     },
     {
-      "id": 70,
+      "id": 71,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Care dintre următoarele reprezintă proprietăți membre ale unui obiect de tipul XMLHttpRequest:",
       "options": [
@@ -1577,7 +1600,7 @@
       ]
     },
     {
-      "id": 71,
+      "id": 72,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Un apel AJAX este în starea 2 dacă:",
       "options": [
@@ -1600,7 +1623,7 @@
       ]
     },
     {
-      "id": 72,
+      "id": 73,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Funcția specificată ca și valoare pentru proprietatea onreadystatechange se apelează:",
       "options": [
@@ -1619,7 +1642,7 @@
       ]
     },
     {
-      "id": 73,
+      "id": 74,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Răspunsul sosit printr-un apel AJAX poate fi:",
       "options": [
@@ -1642,7 +1665,7 @@
       ]
     },
     {
-      "id": 74,
+      "id": 75,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele sunt scriptlet-uri valide in PHP?",
       "options": [
@@ -1665,7 +1688,7 @@
       ]
     },
     {
-      "id": 75,
+      "id": 76,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Un fișier PHP poate fi executat:",
       "options": [
@@ -1679,7 +1702,7 @@
         },
         {
           "text": "De către interpretatorul de comenzi al sistemului de operare pe care este instalată stiva AMP",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "De către un modul din cadrul serverului web",
@@ -1688,7 +1711,7 @@
       ]
     },
     {
-      "id": 76,
+      "id": 77,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Dându-se două variabile $a și $b, cum se poate interschimba valoarea acestora în PHP?",
       "options": [
@@ -1731,7 +1754,7 @@
       ]
     },
     {
-      "id": 77,
+      "id": 78,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "În PHP return este folosit pentru:",
       "options": [
@@ -1754,7 +1777,7 @@
       ]
     },
     {
-      "id": 78,
+      "id": 79,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Ce face funcția session_start() în PHP?",
       "options": [
@@ -1777,7 +1800,7 @@
       ]
     },
     {
-      "id": 79,
+      "id": 80,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Fie două variabile $a și $b în PHP ce conțin șiruri de caractere. Aceste două șiruri se pot concatena folosind:",
       "options": [
@@ -1800,7 +1823,7 @@
       ]
     },
     {
-      "id": 80,
+      "id": 81,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele declarații este corectă pentru definirea tabloului $fructe în PHP?",
       "options": [
@@ -1827,7 +1850,7 @@
       ]
     },
     {
-      "id": 81,
+      "id": 82,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Unde se poate folosi funcția header în PHP?",
       "options": [
@@ -1846,7 +1869,7 @@
       ]
     },
     {
-      "id": 82,
+      "id": 83,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele afirmații sunt adevărate:",
       "options": [
@@ -1865,7 +1888,7 @@
       ]
     },
     {
-      "id": 83,
+      "id": 84,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Cum se introduc comentarii într-un scriptlet PHP?",
       "options": [
@@ -1888,7 +1911,7 @@
       ]
     },
     {
-      "id": 84,
+      "id": 85,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Cum se pot obține parametrii în backend în condițiile în care următoarea ancoră este apăsată? <a href=\"www.siteulmeu.com?addFav=1\">Adauga la favorite</a>",
       "options": [
@@ -1911,7 +1934,7 @@
       ]
     },
     {
-      "id": 85,
+      "id": 86,
       "category": "Java (Servlets & Arhitectură)",
       "text": "Conectarea la o bază de date într-o aplicație web Java se recomandă a fi făcută:",
       "options": [
@@ -1925,12 +1948,12 @@
         },
         {
           "text": "La fiecare request în cadrul metodei doGet sau doPost",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 86,
+      "id": 87,
       "category": "Java (Servlets & Arhitectură)",
       "text": "Parametrii de configurare ai unei aplicații web Java sunt preleați din fișierul de configurare ai aplicației web în cadrul metodei:",
       "options": [
@@ -1949,7 +1972,7 @@
       ]
     },
     {
-      "id": 87,
+      "id": 88,
       "category": "Java (Servlets & Arhitectură)",
       "text": "O bază de date embedded în cadrul unei aplicații web Java se recomandă a fi memorată:",
       "options": [
@@ -1968,7 +1991,7 @@
       ]
     },
     {
-      "id": 88,
+      "id": 89,
       "category": "Java (Servlets & Arhitectură)",
       "text": "În câte instanțe se instanțiază un servlet?",
       "options": [
@@ -1987,7 +2010,7 @@
       ]
     },
     {
-      "id": 89,
+      "id": 90,
       "category": "Java (Servlets & Arhitectură)",
       "text": "O sesiune într-o aplicație web Java se termină cu:",
       "options": [
@@ -2006,7 +2029,7 @@
       ]
     },
     {
-      "id": 90,
+      "id": 91,
       "category": "Securitate Web",
       "text": "Injecțiile JavaScript se datorează:",
       "options": [
@@ -2016,7 +2039,7 @@
         },
         {
           "text": "Validării insuficiente chiar la nivelul codului JavaScript",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "Unor buguri prezente la nivelul browserului web",
@@ -2029,13 +2052,13 @@
       ]
     },
     {
-      "id": 91,
+      "id": 92,
       "category": "Securitate Web",
       "text": "Cum se poate \"fura\" un cookie de sesiune al unui alt utilizator?",
       "options": [
         {
           "text": "Prin lipsa invalidării sesiunii (logout) și navigarea în continuare pe un site malițios",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "Prin intermediul unui cod JavaScript injectat de către atacator (XSS)",
@@ -2048,7 +2071,7 @@
       ]
     },
     {
-      "id": 92,
+      "id": 93,
       "category": "Securitate Web",
       "text": "Pentru evitarea injecțiilor SQL în PHP 7 se recomandă:",
       "options": [
@@ -2067,7 +2090,7 @@
       ]
     },
     {
-      "id": 93,
+      "id": 94,
       "category": "Securitate Web",
       "text": "Care dintre următoarele reprezintă măsuri pentru evitarea injecțiilor SQL:",
       "options": [
@@ -2090,7 +2113,7 @@
       ]
     },
     {
-      "id": 94,
+      "id": 95,
       "category": "Securitate Web",
       "text": "Care dintre următoarele reprezintă măsuri pentru evitarea vulnerabilităților de tip XSS:",
       "options": [
@@ -2113,7 +2136,7 @@
       ]
     },
     {
-      "id": 95,
+      "id": 96,
       "category": "Securitate Web",
       "text": "Care dintre următoarele funcții PHP este folosită pentru a preveni vulnerabilitățile de tip Cross-Site Scripting (XSS)?",
       "options": [
@@ -2132,7 +2155,7 @@
       ]
     },
     {
-      "id": 96,
+      "id": 97,
       "category": "Securitate Web",
       "text": "Care dintre următoarele vulnerabilități ar putea fi exploatată pentru a fura sesiunea unui utilizator autentificat?",
       "options": [
@@ -2142,11 +2165,57 @@
         },
         {
           "text": "Cross-Site Request Forgery (CSRF)",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "Cross-Site scripting (XSS)",
           "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "category": "JavaScript & jQuery",
+      "text": "Care dintre următoarele expresii jQuery se pot folosi interschimbabil?",
+      "options": [
+        {
+          "text": "$(ready(function() {})) cu $(document).ready(function() {})",
+          "isCorrect": false
+        },
+        {
+          "text": "$(function() {}) cu $(document).ready(function() {})",
+          "isCorrect": true
+        },
+        {
+          "text": "$(selector).each(function() {}) cu $(selector.each).function() {}",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "category": "JavaScript & jQuery",
+      "text": "Care dintre următoarele expresii jQuery se pot folosi interschimbabil?",
+      "options": [
+        {
+          "text": "$(\"#myelem\")[0] și document.getElementById(\"myelem\")",
+          "isCorrect": true
+        },
+        {
+          "text": "$(\"#myelem\") și $(document.getElementById(\"myelem\"))",
+          "isCorrect": true
+        },
+        {
+          "text": "$(document.myelem) și $(document.getElementById(\"myelem\"))",
+          "isCorrect": false
+        },
+        {
+          "text": "$ și jQuery",
+          "isCorrect": true
+        },
+        {
+          "text": "$(document).myelem și $(\"#myelem\")[0]",
+          "isCorrect": false
         }
       ]
     }

@@ -38,14 +38,119 @@
   flex-wrap: wrap;
 }
 
+.content-quiz {
+  max-width: 1100px;
+}
+
 .quiz-form {
   display: flex;
   flex-direction: column;
+}
+
+.quiz-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.quiz-nav {
+  position: sticky;
+  top: 1rem;
+  padding: 1rem;
+  border-left: 4px solid var(--moodle-primary);
+}
+
+.nav-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.35rem;
+  border: 1px solid var(--border-color-strong);
+  border-radius: 4px;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+  &:hover {
+    border-color: var(--moodle-accent);
+    background: var(--bg-hover);
+  }
+
+  &.active {
+    border-color: var(--moodle-primary);
+    background: var(--bg-selected);
+    font-weight: 700;
+    outline: 2px solid var(--moodle-primary);
+    outline-offset: 1px;
+  }
+
+  &.answered:not(.active):not(.correct):not(.incorrect) {
+    background: var(--bg-selected);
+    border-color: var(--moodle-accent);
+    color: var(--moodle-accent);
+  }
+
+  &.correct {
+    background: var(--bg-success);
+    border-color: var(--moodle-success);
+    color: var(--text-success);
+    font-weight: 700;
+  }
+
+  &.incorrect {
+    background: var(--bg-danger);
+    border-color: var(--moodle-danger);
+    color: var(--moodle-danger);
+    font-weight: 700;
+  }
+}
+
+.nav-summary {
+  margin: 0.85rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.nav-summary-result {
+  font-weight: 600;
+  color: var(--moodle-primary);
+}
+
+.quiz-main {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  min-width: 0;
+}
+
+.question-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .question-card {
-  border-left: 3px solid transparent;
+  border-left: 4px solid var(--moodle-primary);
 
   &.correct {
     border-left-color: var(--moodle-success);
@@ -70,7 +175,7 @@
 
 .q-type {
   font-size: 0.8rem;
-  background: #eef5ff;
+  background: var(--bg-selected);
   color: var(--moodle-accent);
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
@@ -94,29 +199,29 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color-strong);
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
   min-height: 2.75rem;
 
   &:hover:not(.correct-opt):not(.wrong-opt) {
-    background: #f8f9fa;
+    background: var(--bg-hover);
   }
 
   &.selected {
     border-color: var(--moodle-accent);
-    background: #f0f6ff;
+    background: var(--bg-selected);
   }
 
   &.correct-opt {
     border-color: var(--moodle-success);
-    background: #e8f5e9;
+    background: var(--bg-success);
   }
 
   &.wrong-opt {
     border-color: var(--moodle-danger);
-    background: #ffebee;
+    background: var(--bg-danger);
   }
 
   input[type='checkbox'] {
@@ -143,30 +248,47 @@
 }
 
 .ok-feedback {
-  background: #e8f5e9;
-  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-success);
+  color: var(--text-success);
 }
 
 .wrong-feedback {
-  background: #fff3e0;
-  color: #e65100;
+  background: var(--bg-warning-feedback);
+  color: var(--text-warning-feedback);
 }
 
 .submit-bar {
-  text-align: center;
   position: sticky;
   bottom: 1rem;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--moodle-primary);
+  border-top: 1px solid var(--border-color-strong);
+  box-shadow: 0 4px 16px var(--shadow-sticky);
+}
 
-  p {
-    margin: 0 0 0.75rem;
-    color: var(--text-muted);
-  }
+.submit-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.submit-bar-text {
+  flex: 1;
+  min-width: min(100%, 240px);
+}
+
+.submit-message {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .submit-hint {
-  display: block;
-  margin-top: 0.5rem;
+  margin: 0.35rem 0 0;
   font-size: 0.85rem;
   color: var(--moodle-warning);
 }
@@ -174,4 +296,18 @@
 .loading-card {
   text-align: center;
   padding: 3rem;
+}
+
+@media (max-width: 768px) {
+  .quiz-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-nav {
+    position: static;
+  }
+
+  .nav-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

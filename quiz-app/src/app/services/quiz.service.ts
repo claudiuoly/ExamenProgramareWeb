@@ -115,26 +115,36 @@ export class QuizService {
   private createShuffledSession(questions: Question[]): TestSession {
     const prepared = questions.map((q) => this.prepareQuestion(q));
     const shuffled = this.shuffle(prepared);
-    const chunkSize = Math.ceil(shuffled.length / TEST_COUNT);
-    const tests: QuizTest[] = [];
-
-    for (let i = 0; i < TEST_COUNT; i++) {
-      const slice = shuffled.slice(i * chunkSize, (i + 1) * chunkSize);
-      if (slice.length === 0) continue;
-      tests.push({
-        id: i + 1,
-        label: `Test ${i + 1}`,
-        questions: slice,
-        completed: false,
-      });
-    }
+    const chunks = this.splitIntoTests(shuffled);
+    const tests: QuizTest[] = chunks.map((slice, i) => ({
+      id: i + 1,
+      label: `Test ${i + 1}`,
+      questions: slice,
+      completed: false,
+    }));
 
     return {
       shuffleVersion: Date.now(),
       optionsShuffled: true,
+      questionCount: questions.length,
       tests,
       completedTestIds: [],
     };
+  }
+
+  private splitIntoTests(questions: Question[]): Question[][] {
+    const baseSize = Math.floor(questions.length / TEST_COUNT);
+    const extra = questions.length % TEST_COUNT;
+    const chunks: Question[][] = [];
+    let offset = 0;
+
+    for (let i = 0; i < TEST_COUNT; i++) {
+      const size = baseSize + (i < extra ? 1 : 0);
+      chunks.push(questions.slice(offset, offset + size));
+      offset += size;
+    }
+
+    return chunks;
   }
 
   private shuffle<T>(items: T[]): T[] {
@@ -162,9 +172,15 @@ export class QuizService {
   }
 
   private isSessionValid(stored: TestSession): boolean {
+    const expectedCount = this.allQuestions.length || stored.questionCount;
+    const totalInSession =
+      stored.tests?.reduce((sum, test) => sum + test.questions.length, 0) ?? 0;
+
     return (
       stored.optionsShuffled === true &&
       stored.tests?.length === TEST_COUNT &&
+      stored.questionCount === expectedCount &&
+      totalInSession === expectedCount &&
       stored.tests.every((t) => t.questions.length > 0)
     );
   }

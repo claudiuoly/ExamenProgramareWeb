@@ -92,14 +92,14 @@
 - body:color=red
 - {body: color=red}
 - {body; color:blue}
-- [X] body{color:#abc}
+- [X] body{color:#aabbcc}
 - [X] body{color:yellow}
 
 16. Care dintre următoarele tag-uri este folosit pentru definirea de stiluri CSS interne?
 - css
 - class
 - script
-- [X] <style>
+- [X] style
 
 17. #RRAABB este un cod de culoare valid?
 - Nu, deoarece codul de culoare hexazecimal trebuie sa conțină încă două cifre pentru opacitate
@@ -244,7 +244,7 @@ div .class1 #id2 {
 36. Care dintre următoarele afirmații referitoare la filtrele de vizibilitate sunt adevărate?
 - Selectorul :hidden se folosește pentru a selecta elementele care ocupă spațiu în pagină
 - Selectorul :visible se folosește pentru a selecta elementele care au display:none sau width/height:0
-- [X] Selectorul :visible se folosește pentru a selecta elementele care au visibility:hidden și opacity:0
+- Selectorul :visible se folosește pentru a selecta elementele care au visibility:hidden și opacity:0
 - [X] Selectorul :visible se folosește pentru a selecta toate elementele care ocupă spațiu în pagină
 - [X] Selectorul :hidden se folosește pentru a selecta toate elementele ascunse în pagină
 
@@ -259,9 +259,9 @@ div .class1 #id2 {
 - $(selector).each(function() {}) cu $(selector.each).function() {}
 - $(ready(function() {})) cu $(document).ready(function() {})
 - $(document.myelem) și $(document.getElementById("myelem"))
-- $(document).myelem și $("myelem")
+- $(document).myelem și $("#myelem")[0]
 - [X] $(function() {}) cu $(document).ready(function() {})
-- [X] $("#myelem") și document.getElementById("myelem")
+- [X] $("#myelem")[0] și document.getElementById("myelem")
 - [X] $("#myelem") și $(document.getElementById("myelem"))
 - [X] $ și jQuery
 
@@ -360,7 +360,7 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 - [X] implicit un server web așteaptă cereri prin protocolul HTTP pe portul 80 și cereri prin protocolul HTTPS pe portul 443
 
 53. Care dintre informațiile de mai jos despre atributele readonly și disabled sunt adevărate?
-- valoarea unui input readonly poate fi modificată din JavaScript pe când cea a unui input disabled nu poate fi editată nici din JavaScript
+- [X] valoarea unui input readonly poate fi modificată din JavaScript pe când cea a unui input disabled nu poate fi editată nici din JavaScript
 - atributele specifică același lucru, faptul ca un input readonly sau disabled nu poate fi editat
 - [X] valoarea unui input readonly se trimite serverului la submit, pe când cea a unui input disabled nu se trimite serverului
 
@@ -370,51 +370,57 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 - POST
 - [X] HEAD
 
-55. Care dintre următoarele antete sunt obligatorii pentru o cerere HTTP în cazul folosirii protocolului HTTP/1.1:
+55. Care dintre următoarele metode HTTP nu presupun trimiterea de conținut în cadrul unei cereri HTTP?
+- [X] GET
+- POST
+- PUT
+- [X] HEAD
+
+56. Care dintre următoarele antete sunt obligatorii pentru o cerere HTTP în cazul folosirii protocolului HTTP/1.1:
 - Content-Type
 - User-Agent
 - Cookie
 - [X] Host
 
-56. Care dintre informațiile de mai jos despre un URL accesat prin POST sunt adevărate:
+57. Care dintre informațiile de mai jos despre un URL accesat prin POST sunt adevărate:
 - URL-ului respectiv i se poate face bookmark (poate fi adăugat la favorite)
 - URL respectiv poate fi partajat (share) pe Facebook, Whatsapp, Skype, etc.
 - [X] Reaccesarea URL-ului respectiv prin reload (refresh) la pagină presupune o confirmare din partea utilizatorului
 
-57. Un client face o cerere iar serverul îi răspunde cu "404 Not Found". Care dintre următoarele afirmații sunt adevărate:
+58. Un client face o cerere iar serverul îi răspunde cu "404 Not Found". Care dintre următoarele afirmații sunt adevărate:
 - Dacă nu a găsit fișierul cerut, serverul nu îi mai poate returna clientului nimic după codul de răspuns 404
 - Chiar dacă serverul a răspuns cu "404 Not Found", browserele răspund cu "200 Ok" pentru a-i spune serverului că au primit mesajul de eroare
 - [X] Chiar dacă nu a găsit fișierul cerut de client, serverul îi poate da totuși acestuia un anumit conținut HTML
 
-58. Un URL de pe back-end poate fi invocat (cerut) atât prin GET cât și prin POST:
+59. Un URL de pe back-end poate fi invocat (cerut) atât prin GET cât și prin POST:
 - Doar dacă datele primite fie prin GET fie prin POST sunt aceleași
 - Nu
 - [X] Da
 
-59. Pe ce nivel al stivei TCP/IP se situează protocolul HTTP?
+60. Pe ce nivel al stivei TCP/IP se situează protocolul HTTP?
 - Internet
 - Legatură de date
 - Transport
 - [X] Aplicație
 
-60. Care dintre următoarele reprezintă un avantaj al metodei GET față de POST?
+61. Care dintre următoarele reprezintă un avantaj al metodei GET față de POST?
 - Es mai bună pentru date confidențiale
 - Nu are limită maximă de dimensiune
 - Nu are avantaje
 - [X] Permite salvarea răspunsului ca bookmark
 
-61. Cărui fișier i se trimit datele când se dă submit la următorul formular?
+62. Cărui fișier i se trimit datele când se dă submit la următorul formular?
 - Datele nu se trimit deloc
 - Unui fișier setat într-un fișier de configurare
 - [X] Scriptului de pe backend care afișează formularul
 
-62. Care este un query string posibil dacă se dă submit la următorul formular?
+63. Care este un query string posibil dacă se dă submit la următorul formular?
 - "fname=Ion&lname=Popescu&email=ionpopescu@gmail.com"
 - "fname=Ion&lname=Popescu&email=ionpopescu"
 - "fname=Ion&email=ionpopescu"
 - [X] "fname=Ion&email=ionpopescu@gmail.com"
 
-63. Cum este posibil să existe 2 butoane de submit într-un formular?
+64. Cum este posibil să existe 2 butoane de submit într-un formular?
 - Nu se poate
 - [X] Două input-uri submit cu nume diferite
 - [X] Două butoane dintre care unul dintre ele are setat atributul formaction către alt fișier decât cel al form-ului
@@ -424,56 +430,56 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 🔄 AJAX (Asynchronous JavaScript and XML)
 ----------------------------------------------------------------------
 
-64. De pe client se dorește salvarea unor date despre o persoană (numele și vârsta acesteia) folosind un apel AJAX realizat prin metoda HTTP GET. Care dintre următoarele apeluri realizează acest lucru:
+65. De pe client se dorește salvarea unor date despre o persoană (numele și vârsta acesteia) folosind un apel AJAX realizat prin metoda HTTP GET. Care dintre următoarele apeluri realizează acest lucru:
 - [X] $.get("save.php?nume=Ion&varsta=10")
 - [X] $.get("save.php", { nume: 'Ion', varsta:10 })
 - [X] $.get("save.php", 'nume=Ion&varsta=10')
 
-65. Un apel AJAX se poate face către o resursă statică oferită de end-point-ul de pe server?
+66. Un apel AJAX se poate face către o resursă statică oferită de end-point-ul de pe server?
 - Doar dacă în QUERY_STRING / body-ul POST-ului se trimit spre server și parametri
 - Nu, niciodată
 - [X] Da, întotdeauna
 
-66. În ce condiții metoda send pe un obiect AJAX se apelează întotdeauna cu parametrul șirul vid?
+67. În ce condiții metoda send pe un obiect AJAX se apelează întotdeauna cu parametrul șirul vid?
 - Dacă requestul AJAX se face prin HTTP
 - Metoda send nu se poate apela cu parametrul șirul vid
 - [X] Dacă requestul AJAX se face prin GET
 
-67. Care dintre următoarele metode jQuery folosesc AJAX:
+68. Care dintre următoarele metode jQuery folosesc AJAX:
 - $.post, $.request, load
 - $.ajax, $.get, $.post, $.request
 - $.get, load, unload
 - [X] $.ajax, $.get, load
 
-68. Aranjați în ordine, de la cea mai simplă și puțin customizabilă, la cea mai configurabilă și parametrizabilă următoarele funcții care permit realizarea unui apel AJAX din jQuery:
+69. Aranjați în ordine, de la cea mai simplă și puțin customizabilă, la cea mai configurabilă și parametrizabilă următoarele funcții care permit realizarea unui apel AJAX din jQuery:
 - $.get, load, $.post
 - $.ajax, load, $.get
 - $.post, load, $.ajax
 - [X] load, $.get, $.ajax
 
-69. Pentru a verifica succesul unui apel AJAX trebuie ca:
+70. Pentru a verifica succesul unui apel AJAX trebuie ca:
 - readyState să fie 4 și request.status 100
 - readyState să fie 0 și request.status 100
 - readyState să fie 1 și request.status 200
 - [X] readyState să fie 4 și request.status 200
 
-70. Care dintre următoarele reprezintă proprietăți membre ale unui obiect de tipul XMLHttpRequest:
+71. Care dintre următoarele reprezintă proprietăți membre ale unui obiect de tipul XMLHttpRequest:
 - state, request, response, status
 - readyState, request, response, status
 - [X] readyState, response, responseText, status
 
-71. Un apel AJAX este în starea 2 dacă:
+72. Un apel AJAX este în starea 2 dacă:
 - s-a făcut receive, dar nu s-a făcut send
 - s-a făcut și send și receive, chiar înainte de close
 - s-a făcut open dar încă nu s-a făcut send
 - [X] s-a făcut send dar încă nu a sosit răspunsul de la server
 
-72. Funcția specificată ca și valoare pentru proprietatea onreadystatechange se apelează:
+73. Funcția specificată ca și valoare pentru proprietatea onreadystatechange se apelează:
 - Atunci când serverul schimbă codul de răspuns (response code-ul) care e trimis clientului
 - [X] Atunci când obiectul AJAX își schimbă starea
 - [X] Este posibil să se apeleze și atunci când obiectul nu își schimbă starea dar continuă să vină răspuns de la server
 
-73. Răspunsul sosit printr-un apel AJAX poate fi:
+74. Răspunsul sosit printr-un apel AJAX poate fi:
 - [X] un fișier text
 - [X] un fișier JSON
 - [X] un fișier XML
@@ -484,19 +490,19 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 🐘 PHP (Hypertext Preprocessor)
 ----------------------------------------------------------------------
 
-74. Care dintre următoarele sunt scriptlet-uri valide in PHP?
+75. Care dintre următoarele sunt scriptlet-uri valide in PHP?
 - <% %>
 - [X] <?= ?>
 - [X] <? ?>, cu conditia setarii unei optiuni de configurare in php.ini
 - [X] <?php ?>
 
-75. Un fișier PHP poate fi executat:
+76. Un fișier PHP poate fi executat:
 - De către browser
 - [X] În linia de comandă folosind interpretorul php.exe pe Windows sau php pe Linux
-- [X] De către interpretatorul de comenzi al sistemului de operare pe care este instalată stiva AMP
+- De către interpretatorul de comenzi al sistemului de operare pe care este instalată stiva AMP
 - [X] De către un modul din cadrul serverului web
 
-76. Dându-se două variabile $a și $b, cum se poate interschimba valoarea acestora în PHP?
+77. Dându-se două variabile $a și $b, cum se poate interschimba valoarea acestora în PHP?
 - list($a, $b) = ($b, $a);
 - array($a, $b) = ($b, $a);
 - $a = $b; $b = $a;
@@ -507,48 +513,48 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 - [X] list($a, $b) = [$b, $a];
 - [X] list($a, $b) = array($b, $a);
 
-77. În PHP return este folosit pentru:
+78. În PHP return este folosit pentru:
 - a termina execuția logicii ce se execută pe server și a trimite răspunsul complet clientului
 - a trimite clientului un anumit răspuns în urma cererii făcute de acesta
 - [X] a termina scriptul curent care se execută și a reda controlul execuției unui eventual script care l-a inclus pe scriptul curent cu include sau require
 - [X] a termina execuția unei funcții
 
-78. Ce face funcția session_start() în PHP?
+79. Ce face funcția session_start() în PHP?
 - Inițializează întotdeauna o nouă sesiune
 - Porneste sesiunea existenta deja si trimite clientului cookie-ul de sesiune prin intermediul antetului HTTP Cookie
 - [X] Dacă este vorba de o sesiune nouă, generează un cookie aleator de sesiune pe care îl trimite folosind antetul HTTP clientului
 - [X] Dacă este vorba de o sesiune veche, determină despre ce sesiune este vorba pe baza valorii cookie-ului de sesiune trimis de client și populează tabloul $_SESSION în mod corespunzător
 
-79. Fie două variabile $a și $b în PHP ce conțin șiruri de caractere. Aceste două șiruri se pot concatena folosind:
+80. Fie două variabile $a și $b în PHP ce conțin șiruri de caractere. Aceste două șiruri se pot concatena folosind:
 - $s = '$a$b';
 - $s = $a + $b;
 - [X] $s = "$a$b";
 - [X] $s = $a . $b;
 
-80. Care dintre următoarele declarații este corectă pentru definirea tabloului $fructe în PHP?
+81. Care dintre următoarele declarații este corectă pentru definirea tabloului $fructe în PHP?
 - $fructe=("struguri", "mere", "pere");
 - $fructe="struguri", "mere", "pere";
 - $fructe={"struguri", "mere", "pere"};
 - $fructe=array["struguri", "mere", "pere"];
 - [X] $fructe=array("struguri", "mere", "pere"); (și cu paranteze pătrate de la PHP 5.4: $fructe=["struguri", "mere", "pere"])
 
-81. Unde se poate folosi funcția header în PHP?
+82. Unde se poate folosi funcția header în PHP?
 - în cadrul unui scriptlet PHP plasat în secțiunea documentului HTML generat de fișierul PHP
 - în orice scriptlet din cadrul fișierului PHP
 - [X] în primul scriptlet din fișierul PHP și doar cu condiția ca scriptul PHP să nu fi trimis anterior spre browser orice formă de conținut (cu excepția unor eventuale antete)
 
-82. Care dintre următoarele afirmații sunt adevărate:
+83. Care dintre următoarele afirmații sunt adevărate:
 - MySQL Improved Extension (mysqli_*) asigură în plus față de PDO posibilitatea folosirii de "prepared statement"-uri
 - MySQL Improved Extension (mysqli_*) asigură în plus față de PDO independența față de sistemul de gestiune al bazelor de date folosit
 - [X] MySQL Old Extension (mysql_*) nu suportă "prepared statement"-uri, dar permite evitarea injecțiilor SQL
 
-83. Cum se introduc comentarii într-un scriptlet PHP?
+84. Cum se introduc comentarii într-un scriptlet PHP?
 - <!-- -->
 - [X] //
 - [X] /* ... */
 - [X] #
 
-84. Cum se pot obține parametrii în backend în condițiile în care următoarea ancoră este apăsată? <a href="www.siteulmeu.com?addFav=1">Adauga la favorite</a>
+85. Cum se pot obține parametrii în backend în condițiile în care următoarea ancoră este apăsată? <a href="www.siteulmeu.com?addFav=1">Adauga la favorite</a>
 - $_SESSION["addFav"]
 - $_POST["addFav"]
 - Nu se trimit parametrii
@@ -559,27 +565,27 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 ☕ Java (Servlets & Arhitectură)
 ----------------------------------------------------------------------
 
-85. Conectarea la o bază de date într-o aplicație web Java se recomandă a fi făcută:
+86. Conectarea la o bază de date într-o aplicație web Java se recomandă a fi făcută:
 - La pornirea containerului, o singură conexiune pentru toate aplicațiile web
 - [X] La inițializarea aplicației web / a contextului
-- [X] La fiecare request în cadrul metodei doGet sau doPost
+- La fiecare request în cadrul metodei doGet sau doPost
 
-86. Parametrii de configurare ai unei aplicații web Java sunt preleați din fișierul de configurare ai aplicației web în cadrul metodei:
+87. Parametrii de configurare ai unei aplicații web Java sunt preleați din fișierul de configurare ai aplicației web în cadrul metodei:
 - applicationCreated()
 - init()
 - [X] contextInitialized()
 
-87. O bază de date embedded în cadrul unei aplicații web Java se recomandă a fi memorată:
+88. O bază de date embedded în cadrul unei aplicații web Java se recomandă a fi memorată:
 - Oriunde altundeva în cadrul sistemului de fișiere dar nu în cadrul directorului aplicației web întrucât de acolo baza de date ar putea fi accesată de către clienții web
 - În cadrul folderului app/databases/, unde app reprezintă directorul aplicației web
 - [X] În folderul WEB-INF al aplicației web întrucât acesta nu este accesibil de către un client web
 
-88. În câte instanțe se instanțiază un servlet?
+89. În câte instanțe se instanțiază un servlet?
 - Se creează o instanță separată la fiecare cerere făcută de către un client
 - În nici una, un servlet este executat direct de către container/application server
 - [X] Într-o singură instanță
 
-89. O sesiune într-o aplicație web Java se termină cu:
+90. O sesiune într-o aplicație web Java se termină cu:
 - session.destroy()
 - session.close()
 - [X] session.invalidate()
@@ -589,40 +595,56 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 🛡️ Securitate Web
 ----------------------------------------------------------------------
 
-90. Injecțiile JavaScript se datorează:
+91. Injecțiile JavaScript se datorează:
 - Folosirii protocolului http în locul protocolului https
-- Validării insuficiente chiar la nivelul codului JavaScript
+- [X] Validării insuficiente chiar la nivelul codului JavaScript
 - Unor buguri prezente la nivelul browserului web
 - [X] Validării insuficiente server-side la nivelul scriptului ce prelucrează datele din formular
 
-91. Cum se poate "fura" un cookie de sesiune al unui alt utilizator?
-- [X] Prin lipsa invalidării sesiunii (logout) și navigarea în continuare pe un site malițios
+92. Cum se poate "fura" un cookie de sesiune al unui alt utilizator?
+- Prin lipsa invalidării sesiunii (logout) și navigarea în continuare pe un site malițios
 - [X] Prin intermediul unui cod JavaScript injectat de către atacator (XSS)
 - [X] Prin interceptarea datelor la nivelul rețelei de transport în lipsa folosirii unei conexiuni sigure (man in the middle)
 
-92. Pentru evitarea injecțiilor SQL în PHP 7 se recomandă:
+93. Pentru evitarea injecțiilor SQL în PHP 7 se recomandă:
 - Eliminarea ghilimelelor și apostrofelor din datele primite de la client
 - Evitarea acestora folosind funcția mysql_real_escape_string
 - [X] Folosirea de "prepared statement"-uri
 
-93. Care dintre următoarele reprezintă măsuri pentru evitarea injecțiilor SQL:
+94. Care dintre următoarele reprezintă măsuri pentru evitarea injecțiilor SQL:
 - Dezactivarea în cadrul aplicației Web a posibilității rulării de cod SQL de către browser
 - Verificări riguroase la nivelul browserului legate de validitatea datelor introduse
 - [X] Verificări riguroase la nivelul backend-ului legate de validitatea datelor introduse precum și folosirea de biblioteci specializate pentru persistenta datelor (ORM-uri)
 - [X] Folosirea la nivelul backend-ului de mecanisme de tipul "prepared statement"
 
-94. Care dintre următoarele reprezintă măsuri pentru evitarea vulnerabilităților de tip XSS:
+95. Care dintre următoarele reprezintă măsuri pentru evitarea vulnerabilităților de tip XSS:
 - Verificări riguroase la nivelul browserului legate de validitatea datelor introduse
 - Folosirea la nivelul browserului a unor biblioteci de funcții JavaScript consacrate și testate anterior
 - Dezactivarea din cadrul aplicației web a posibilității rulării de cod JavaScript de către browser
 - [X] Înlocuirea anumitor caractere din datele primite de la client cu entitățiile HTML corespunzătoare
 
-95. Care dintre următoarele funcții PHP este folosită pentru a preveni vulnerabilitățile de tip Cross-Site Scripting (XSS)?
+96. Care dintre următoarele funcții PHP este folosită pentru a preveni vulnerabilitățile de tip Cross-Site Scripting (XSS)?
 - mysql_real_escape_string
 - filter_xss
 - [X] htmlentities
 
-96. Care dintre următoarele vulnerabilități ar putea fi exploatată pentru a fura sesiunea unui utilizator autentificat?
+97. Care dintre următoarele vulnerabilități ar putea fi exploatată pentru a fura sesiunea unui utilizator autentificat?
 - SQL Injection
-- [X] Cross-Site Request Forgery (CSRF)
+- Cross-Site Request Forgery (CSRF)
 - [X] Cross-Site scripting (XSS)
+
+----------------------------------------------------------------------
+💻 JavaScript & jQuery
+----------------------------------------------------------------------
+
+98. Care dintre următoarele expresii jQuery se pot folosi interschimbabil?
+- $(ready(function() {})) cu $(document).ready(function() {})
+- [X] $(function() {}) cu $(document).ready(function() {})
+- $(selector).each(function() {}) cu $(selector.each).function() {}
+
+99. Care dintre următoarele expresii jQuery se pot folosi interschimbabil?
+- [X] $("#myelem")[0] și document.getElementById("myelem")
+- [X] $("#myelem") și $(document.getElementById("myelem"))
+- $(document.myelem) și $(document.getElementById("myelem"))
+- [X] $ și jQuery
+- $(document).myelem și $("#myelem")[0]

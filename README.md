@@ -1,10 +1,10 @@
 # Grile Programare Web — Angular (stil Moodle)
 
-Aplicație simplă pentru exersarea celor **96 de grile** din `Toate Grilele.txt`, fără login.
+Aplicație simplă pentru exersarea celor **99 de grile** din `Toate Grilele.txt`, fără login.
 
 ## Caracteristici
 
-- **6 teste** (~16 întrebări fiecare), amestecate aleator din **toate categoriile**
+- **6 teste** (5×16 + 1×17 întrebări), amestecate aleator din **toate categoriile**
 - **Ordinea întrebărilor și a răspunsurilor** este aleatoare la fiecare reamestecare
 - Toate întrebările folosesc **checkbox** (fără indiciu vizual dacă e unul sau mai multe răspunsuri corecte)
 - Feedback după trimitere (corect / incorect + variantele corecte evidențiate)

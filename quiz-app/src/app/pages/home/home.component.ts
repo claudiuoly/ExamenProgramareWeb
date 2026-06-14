@@ -3,11 +3,13 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuizService, TEST_COUNT } from '../../services/quiz.service';
 import { QuizTest, TestSession } from '../../models/quiz.model';
+import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle.component';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ThemeToggleComponent, IconComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

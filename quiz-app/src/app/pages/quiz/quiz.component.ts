@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { QuizService } from '../../services/quiz.service';
 import { Question, QuizTest } from '../../models/quiz.model';
+import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle.component';
+import { IconComponent } from '../../components/icon/icon.component';
 
 interface QuestionState {
   question: Question;
@@ -15,7 +17,7 @@ interface QuestionState {
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, ThemeToggleComponent, IconComponent],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
@@ -26,6 +28,7 @@ export class QuizComponent implements OnInit {
 
   test: QuizTest | null = null;
   questionStates: QuestionState[] = [];
+  currentIndex = 0;
   submitted = false;
   score = 0;
   loading = true;
@@ -60,6 +63,10 @@ export class QuizComponent implements OnInit {
     this.loading = false;
   }
 
+  get currentState(): QuestionState | null {
+    return this.questionStates[this.currentIndex] ?? null;
+  }
+
   toggleOption(state: QuestionState, index: number): void {
     if (this.submitted) return;
 
@@ -72,6 +79,28 @@ export class QuizComponent implements OnInit {
 
   isSelected(state: QuestionState, index: number): boolean {
     return state.selected.has(index);
+  }
+
+  isAnswered(state: QuestionState): boolean {
+    return state.selected.size > 0;
+  }
+
+  answeredCount(): number {
+    return this.questionStates.filter((s) => s.selected.size > 0).length;
+  }
+
+  goToQuestion(index: number): void {
+    if (index >= 0 && index < this.questionStates.length) {
+      this.currentIndex = index;
+    }
+  }
+
+  prevQuestion(): void {
+    this.goToQuestion(this.currentIndex - 1);
+  }
+
+  nextQuestion(): void {
+    this.goToQuestion(this.currentIndex + 1);
   }
 
   allAnswered(): boolean {
@@ -108,6 +137,7 @@ export class QuizComponent implements OnInit {
     this.quizService.resetTestCompletion(this.test.id);
     this.submitted = false;
     this.score = 0;
+    this.currentIndex = 0;
     this.questionStates = this.test.questions.map((q) => ({
       question: q,
       selected: new Set<number>(),

@@ -28,6 +28,7 @@ export interface QuizTest {
 export interface TestSession {
   shuffleVersion: number;
   optionsShuffled: boolean;
+  questionCount: number;
   tests: QuizTest[];
   completedTestIds: number[];
 }
