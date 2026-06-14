@@ -1,0 +1,108 @@
+<div class="page">
+  <header class="moodle-header">
+    <div class="header-inner">
+      <h1>Grile Programare Web</h1>
+      <p class="subtitle">Exerciții tip Moodle</p>
+    </div>
+  </header>
+
+  <main class="content">
+    @if (loading) {
+      <div class="card loading-card">
+        <p>Se încarcă grilele...</p>
+      </div>
+    } @else if (session) {
+      <div class="card intro-card">
+        <h2>Bun venit!</h2>
+        <p>
+          {{ totalQuestionsCount() }} întrebări împărțite în
+          <strong>{{ testCount }} teste</strong>, amestecate aleator din toate categoriile.
+          Întrebările și răspunsurile sunt amestecate la fiecare reamestecare.
+        </p>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-header">
+            <div class="progress-label">
+              Progres: {{ completedCount() }} / {{ testCount }} teste finalizate
+            </div>
+            @if (completedCount() > 0) {
+              <div class="progress-stats">
+                <span class="stat stat-correct">
+                  <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                  {{ totalCorrect() }} corecte
+                </span>
+                <span class="stat stat-wrong">
+                  <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+                  {{ totalWrong() }} greșite
+                </span>
+              </div>
+            }
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="progressPercent()"></div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-secondary reshuffle-btn"
+          [disabled]="reshuffling"
+          (click)="reshuffle()"
+        >
+          @if (reshuffling) {
+            <svg class="btn-icon spinning" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+            </svg>
+            <span>Se reamesteacă...</span>
+          } @else {
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/>
+            </svg>
+            <span>Reamesteacă testele</span>
+          }
+        </button>
+        <p class="hint">
+          Apasă după ce termini toate testele (sau oricând vrei o nouă distribuție aleatoare).
+        </p>
+      </div>
+
+      <div class="tests-grid">
+        @for (test of session.tests; track test.id) {
+          <a
+            class="test-card"
+            [class.completed]="test.completed"
+            [routerLink]="['/test', test.id]"
+          >
+            <div class="test-badge">{{ test.label }}</div>
+            <div class="test-info">
+              <span class="test-count">{{ totalQuestions(test) }} întrebări</span>
+              @if (test.completed) {
+                <div class="test-result-stats">
+                  <span class="stat stat-correct">
+                    <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    {{ correctCount(test) }} corecte
+                  </span>
+                  <span class="stat stat-wrong">
+                    <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                    {{ wrongCount(test) }} greșite
+                  </span>
+                </div>
+              } @else {
+                <span class="test-status">De rezolvat</span>
+              }
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+        }
+      </div>
+    }
+  </main>
+</div>

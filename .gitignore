@@ -1,0 +1,15 @@
+# Dependencies & build
+quiz-app/node_modules/
+quiz-app/dist/
+quiz-app/.angular/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

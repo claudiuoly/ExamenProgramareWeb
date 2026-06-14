@@ -1,0 +1,84 @@
+<div class="page">
+  <header class="moodle-header">
+    <div class="header-inner">
+      <a routerLink="/" class="back-link">← Înapoi la teste</a>
+      @if (test) {
+        <h1>{{ test.label }}</h1>
+        <p class="subtitle">{{ questionStates.length }} întrebări · ordine aleatoare (întrebări + răspunsuri)</p>
+      }
+    </div>
+  </header>
+
+  <main class="content">
+    @if (loading) {
+      <div class="card loading-card"><p>Se încarcă...</p></div>
+    } @else if (test) {
+      @if (submitted) {
+        <div class="card result-banner" [class.pass]="score / questionStates.length >= 0.5">
+          <h2>Rezultat: {{ score }} / {{ questionStates.length }}</h2>
+          <p>{{ ((score / questionStates.length) * 100) | number:'1.0-0' }}% corect</p>
+          <div class="result-actions">
+            <button type="button" class="btn btn-secondary" (click)="retry()">Reîncearcă testul</button>
+            <a routerLink="/" class="btn btn-primary">Înapoi la listă</a>
+          </div>
+        </div>
+      }
+
+      <form class="quiz-form" (ngSubmit)="submit()">
+        @for (state of questionStates; track state.question.id; let qi = $index) {
+          <div
+            class="card question-card"
+            [class.correct]="state.revealed && state.isCorrect"
+            [class.incorrect]="state.revealed && state.isCorrect === false"
+          >
+            <div class="question-header">
+              <span class="q-number">Întrebarea {{ qi + 1 }}</span>
+            </div>
+
+            <div class="question-text">{{ state.question.text }}</div>
+
+            <div class="options">
+              @for (opt of state.question.options; track $index; let oi = $index) {
+                <label
+                  class="option"
+                  [class.selected]="isSelected(state, oi)"
+                  [class.correct-opt]="state.revealed && opt.isCorrect"
+                  [class.wrong-opt]="state.revealed && isSelected(state, oi) && !opt.isCorrect"
+                >
+                  <input
+                    type="checkbox"
+                    [checked]="isSelected(state, oi)"
+                    [disabled]="submitted"
+                    (change)="toggleOption(state, oi)"
+                  />
+                  <span class="option-text">{{ opt.text }}</span>
+                </label>
+              }
+            </div>
+
+            @if (state.revealed && state.isCorrect === false) {
+              <div class="feedback wrong-feedback">
+                Răspuns incorect. Variantele corecte sunt marcate cu verde.
+              </div>
+            }
+            @if (state.revealed && state.isCorrect) {
+              <div class="feedback ok-feedback">✓ Corect!</div>
+            }
+          </div>
+        }
+
+        @if (!submitted) {
+          <div class="submit-bar card">
+            <p>Verifică toate răspunsurile înainte de trimitere.</p>
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!allAnswered()">
+              Trimite testul
+            </button>
+            @if (!allAnswered()) {
+              <span class="submit-hint">Răspunde la toate întrebările pentru a trimite.</span>
+            }
+          </div>
+        }
+      </form>
+    }
+  </main>
+</div>
