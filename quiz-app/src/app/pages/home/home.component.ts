@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { QuizService, TEST_COUNT } from '../../services/quiz.service';
+import { QuizService } from '../../services/quiz.service';
 import { QuizTest, TestSession } from '../../models/quiz.model';
 import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle.component';
 import { IconComponent } from '../../components/icon/icon.component';
@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
   session: TestSession | null = null;
   loading = true;
   reshuffling = false;
-  testCount = TEST_COUNT;
+
+  get testCount(): number {
+    return this.session?.tests.length ?? 0;
+  }
 
   async ngOnInit(): Promise<void> {
     const allDone = sessionStorage.getItem('web-quiz-all-done') === '1';
@@ -45,7 +48,7 @@ export class HomeComponent implements OnInit {
   }
 
   progressPercent(): number {
-    if (!this.session) return 0;
+    if (!this.session || this.testCount === 0) return 0;
     const done = this.completedCount();
     return Math.round((done / this.testCount) * 100);
   }

@@ -9,7 +9,11 @@ import {
 } from '../models/quiz.model';
 
 const STORAGE_KEY = 'web-quiz-session';
-export const TEST_COUNT = 6;
+export const QUESTIONS_PER_TEST = 30;
+
+export function computeTestCount(questionCount: number): number {
+  return Math.max(1, Math.round(questionCount / QUESTIONS_PER_TEST));
+}
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
@@ -93,7 +97,7 @@ export class QuizService {
 
   allTestsCompleted(): boolean {
     const session = this.getSession();
-    return !!session && session.completedTestIds.length >= TEST_COUNT;
+    return !!session && session.completedTestIds.length >= session.tests.length;
   }
 
   evaluateAnswer(question: Question, selectedIndices: number[]): boolean {
@@ -133,12 +137,13 @@ export class QuizService {
   }
 
   private splitIntoTests(questions: Question[]): Question[][] {
-    const baseSize = Math.floor(questions.length / TEST_COUNT);
-    const extra = questions.length % TEST_COUNT;
+    const testCount = computeTestCount(questions.length);
+    const baseSize = Math.floor(questions.length / testCount);
+    const extra = questions.length % testCount;
     const chunks: Question[][] = [];
     let offset = 0;
 
-    for (let i = 0; i < TEST_COUNT; i++) {
+    for (let i = 0; i < testCount; i++) {
       const size = baseSize + (i < extra ? 1 : 0);
       chunks.push(questions.slice(offset, offset + size));
       offset += size;
@@ -173,12 +178,13 @@ export class QuizService {
 
   private isSessionValid(stored: TestSession): boolean {
     const expectedCount = this.allQuestions.length || stored.questionCount;
+    const expectedTests = computeTestCount(expectedCount);
     const totalInSession =
       stored.tests?.reduce((sum, test) => sum + test.questions.length, 0) ?? 0;
 
     return (
       stored.optionsShuffled === true &&
-      stored.tests?.length === TEST_COUNT &&
+      stored.tests?.length === expectedTests &&
       stored.questionCount === expectedCount &&
       totalInSession === expectedCount &&
       stored.tests.every((t) => t.questions.length > 0)
