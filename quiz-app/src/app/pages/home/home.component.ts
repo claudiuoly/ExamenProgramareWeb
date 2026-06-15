@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuizService } from '../../services/quiz.service';
@@ -13,30 +13,49 @@ import { IconComponent } from '../../components/icon/icon.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   private readonly quizService = inject(QuizService);
 
   session: TestSession | null = null;
   loading = true;
   reshuffling = false;
+  shuffleConfirmed = false;
+
+  private shuffleConfirmTimer: ReturnType<typeof setTimeout> | null = null;
 
   get testCount(): number {
     return this.session?.tests.length ?? 0;
   }
 
   async ngOnInit(): Promise<void> {
-    const allDone = sessionStorage.getItem('web-quiz-all-done') === '1';
-    this.session = await this.quizService.initSession(allDone);
-    if (allDone) {
-      sessionStorage.removeItem('web-quiz-all-done');
-    }
+    this.session = await this.quizService.initSession();
     this.loading = false;
   }
 
   async reshuffle(): Promise<void> {
     this.reshuffling = true;
+    this.shuffleConfirmed = false;
     this.session = await this.quizService.reshuffleAll();
     this.reshuffling = false;
+    this.showShuffleConfirmation();
+  }
+
+  private showShuffleConfirmation(): void {
+    if (this.shuffleConfirmTimer) {
+      clearTimeout(this.shuffleConfirmTimer);
+    }
+
+    this.shuffleConfirmed = true;
+    this.shuffleConfirmTimer = setTimeout(() => {
+      this.shuffleConfirmed = false;
+      this.shuffleConfirmTimer = null;
+    }, 2000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.shuffleConfirmTimer) {
+      clearTimeout(this.shuffleConfirmTimer);
+    }
   }
 
   completedCount(): number {

@@ -46,15 +46,22 @@
           </div>
         </div>
 
-        <button
-          type="button"
-          class="btn btn-secondary reshuffle-btn"
-          [disabled]="reshuffling"
-          (click)="reshuffle()"
-        >
-          <app-icon name="shuffle" [className]="reshuffling ? 'btn-icon spinning' : 'btn-icon'" />
-          Reamesteacă testele
-        </button>
+        <div class="reshuffle-wrap">
+          <button
+            type="button"
+            class="btn btn-secondary reshuffle-btn"
+            [disabled]="reshuffling"
+            (click)="reshuffle()"
+          >
+            <app-icon name="shuffle" [className]="reshuffling ? 'btn-icon spinning' : 'btn-icon'" />
+            Reamesteacă testele
+          </button>
+          @if (shuffleConfirmed) {
+            <span class="reshuffle-check" role="status" aria-label="Testele au fost reamestecate">
+              <app-icon name="check" className="reshuffle-check-icon" />
+            </span>
+          }
+        </div>
         <p class="hint">
           Apasă după ce termini toate testele (sau oricând vrei o nouă distribuție aleatoare).
         </p>

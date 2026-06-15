@@ -23,6 +23,21 @@ export interface QuizTest {
   completed: boolean;
   score?: number;
   maxScore?: number;
+  attempt?: TestAttempt;
+}
+
+export interface StoredQuestionAttempt {
+  questionId: number;
+  selectedIndices: number[];
+  revealed: boolean;
+  isCorrect: boolean | null;
+}
+
+export interface TestAttempt {
+  submitted: boolean;
+  score: number;
+  currentIndex: number;
+  questions: StoredQuestionAttempt[];
 }
 
 export interface TestSession {

@@ -74,7 +74,14 @@
                   <span class="q-number">Întrebarea {{ currentIndex + 1 }} din {{ questionStates.length }}</span>
                 </div>
 
-                <div class="question-text">{{ state.question.text }}</div>
+                <div class="question-text">
+                  @if (splitQuestionText(state.question.text); as parts) {
+                    <p class="question-prompt">{{ parts.prompt }}</p>
+                    @if (parts.code) {
+                      <pre class="question-code">{{ parts.code }}</pre>
+                    }
+                  }
+                </div>
 
                 <div class="options">
                   @for (opt of state.question.options; track $index; let oi = $index) {

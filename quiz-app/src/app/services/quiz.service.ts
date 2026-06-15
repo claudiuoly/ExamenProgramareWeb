@@ -5,6 +5,7 @@ import {
   Question,
   QuestionsData,
   QuizTest,
+  TestAttempt,
   TestSession,
 } from '../models/quiz.model';
 
@@ -32,8 +33,9 @@ export class QuizService {
     if (!forceReshuffle) {
       const stored = this.readStoredSession();
       if (stored && this.isSessionValid(stored)) {
-        this.session = stored;
-        return stored;
+        this.session = this.refreshSessionQuestions(stored, this.allQuestions);
+        this.persistSession();
+        return this.session;
       }
     }
 
@@ -68,27 +70,31 @@ export class QuizService {
       test.completed = false;
       test.score = undefined;
       test.maxScore = undefined;
+      test.attempt = undefined;
     }
 
     session.completedTestIds = session.completedTestIds.filter((id) => id !== testId);
-    sessionStorage.removeItem('web-quiz-all-done');
     this.session = session;
     this.persistSession();
   }
 
-  markTestCompleted(testId: number, score: number, maxScore: number): void {
+  saveTestAttempt(testId: number, attempt: TestAttempt): void {
     const session = this.getSession();
     if (!session) return;
 
     const test = session.tests.find((t) => t.id === testId);
-    if (test) {
-      test.completed = true;
-      test.score = score;
-      test.maxScore = maxScore;
-    }
+    if (!test) return;
 
-    if (!session.completedTestIds.includes(testId)) {
-      session.completedTestIds.push(testId);
+    test.attempt = attempt;
+
+    if (attempt.submitted) {
+      test.completed = true;
+      test.score = attempt.score;
+      test.maxScore = test.questions.length;
+
+      if (!session.completedTestIds.includes(testId)) {
+        session.completedTestIds.push(testId);
+      }
     }
 
     this.session = session;
@@ -159,6 +165,34 @@ export class QuizService {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+  }
+
+  private refreshSessionQuestions(
+    session: TestSession,
+    sourceQuestions: Question[]
+  ): TestSession {
+    const byId = new Map(sourceQuestions.map((q) => [q.id, q]));
+
+    for (const test of session.tests) {
+      test.questions = test.questions.map((question) => {
+        const fresh = byId.get(question.id);
+        if (!fresh) return question;
+
+        const options = question.options.map((option) => {
+          const match = fresh.options.find((o) => o.text === option.text);
+          return match ?? option;
+        });
+
+        return {
+          ...question,
+          category: fresh.category,
+          text: fresh.text,
+          options,
+        };
+      });
+    }
+
+    return session;
   }
 
   private readStoredSession(): TestSession | null {

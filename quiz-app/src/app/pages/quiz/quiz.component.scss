@@ -183,9 +183,26 @@
 
 .question-text {
   margin-bottom: 1rem;
+}
+
+.question-prompt {
+  margin: 0 0 0.75rem;
   line-height: 1.6;
-  white-space: pre-wrap;
   font-size: 1rem;
+}
+
+.question-code {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color-strong);
+  border-radius: 4px;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-x: auto;
 }
 
 .options {

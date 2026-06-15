@@ -1,9 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { QuizService } from '../../services/quiz.service';
-import { Question, QuizTest } from '../../models/quiz.model';
+import { Question, QuizTest, TestAttempt } from '../../models/quiz.model';
 import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle.component';
 import { IconComponent } from '../../components/icon/icon.component';
 
@@ -21,7 +21,7 @@ interface QuestionState {
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
-export class QuizComponent implements OnInit {
+export class QuizComponent implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly quizService = inject(QuizService);
@@ -48,19 +48,13 @@ export class QuizComponent implements OnInit {
       return;
     }
 
-    this.questionStates = this.test.questions.map((q) => ({
-      question: q,
-      selected: new Set<number>(),
-      revealed: false,
-      isCorrect: null,
-    }));
-
-    if (this.test.completed && this.test.score !== undefined) {
-      this.submitted = true;
-      this.score = this.test.score;
-    }
+    this.restoreAttempt(this.test.attempt);
 
     this.loading = false;
+  }
+
+  ngOnDestroy(): void {
+    this.persistProgress();
   }
 
   get currentState(): QuestionState | null {
@@ -75,6 +69,8 @@ export class QuizComponent implements OnInit {
     } else {
       state.selected.add(index);
     }
+
+    this.persistProgress();
   }
 
   isSelected(state: QuestionState, index: number): boolean {
@@ -92,6 +88,7 @@ export class QuizComponent implements OnInit {
   goToQuestion(index: number): void {
     if (index >= 0 && index < this.questionStates.length) {
       this.currentIndex = index;
+      this.persistProgress();
     }
   }
 
@@ -121,15 +118,7 @@ export class QuizComponent implements OnInit {
 
     this.score = correct;
     this.submitted = true;
-    this.quizService.markTestCompleted(
-      this.test.id,
-      correct,
-      this.questionStates.length
-    );
-
-    if (this.quizService.allTestsCompleted()) {
-      sessionStorage.setItem('web-quiz-all-done', '1');
-    }
+    this.quizService.saveTestAttempt(this.test.id, this.buildAttempt(true));
   }
 
   retry(): void {
@@ -144,5 +133,66 @@ export class QuizComponent implements OnInit {
       revealed: false,
       isCorrect: null,
     }));
+  }
+
+  splitQuestionText(text: string): { prompt: string; code: string | null } {
+    const newlineIndex = text.indexOf('\n');
+    if (newlineIndex === -1) {
+      return { prompt: text, code: null };
+    }
+
+    const prompt = text.slice(0, newlineIndex).trim();
+    const code = text.slice(newlineIndex + 1).trim();
+    const looksLikeCode = /[<>{}]/.test(code) || code.includes('<table');
+
+    return looksLikeCode ? { prompt, code } : { prompt: text, code: null };
+  }
+
+  private restoreAttempt(attempt?: TestAttempt): void {
+    if (!this.test) return;
+
+    this.questionStates = this.test.questions.map((q) => {
+      const saved = attempt?.questions.find((s) => s.questionId === q.id);
+      return {
+        question: q,
+        selected: new Set(saved?.selectedIndices ?? []),
+        revealed: saved?.revealed ?? false,
+        isCorrect: saved?.isCorrect ?? null,
+      };
+    });
+
+    if (attempt) {
+      this.submitted = attempt.submitted;
+      this.score = attempt.score;
+      this.currentIndex = Math.min(
+        attempt.currentIndex,
+        Math.max(this.questionStates.length - 1, 0)
+      );
+      return;
+    }
+
+    if (this.test.completed && this.test.score !== undefined) {
+      this.submitted = true;
+      this.score = this.test.score;
+    }
+  }
+
+  private buildAttempt(submitted: boolean): TestAttempt {
+    return {
+      submitted,
+      score: this.score,
+      currentIndex: this.currentIndex,
+      questions: this.questionStates.map((state) => ({
+        questionId: state.question.id,
+        selectedIndices: [...state.selected].sort((a, b) => a - b),
+        revealed: state.revealed,
+        isCorrect: state.isCorrect,
+      })),
+    };
+  }
+
+  private persistProgress(): void {
+    if (!this.test) return;
+    this.quizService.saveTestAttempt(this.test.id, this.buildAttempt(this.submitted));
   }
 }

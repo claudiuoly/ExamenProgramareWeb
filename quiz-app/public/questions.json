@@ -1,6 +1,6 @@
 {
   "title": "Grile Programare Web",
-  "totalQuestions": 99,
+  "totalQuestions": 100,
   "questions": [
     {
       "id": 1,
@@ -44,7 +44,7 @@
         },
         {
           "text": "Tastatura setată pe limba română și specificarea atributului lang=\"ro-RO\" la tagul HTML",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
@@ -101,7 +101,7 @@
         },
         {
           "text": "<img src=\"poza.jpg\"></img>",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "<img src=\"poza.jpg\">",
@@ -115,6 +115,29 @@
     },
     {
       "id": 6,
+      "category": "HTML / DOM / CSS",
+      "text": "Care este forma corectă de folosire a tag-ului img în cadrul unui document HTML5:",
+      "options": [
+        {
+          "text": "<img> poza.jpg </img>",
+          "isCorrect": false
+        },
+        {
+          "text": "<img src=\"poza.jpg\"></img>",
+          "isCorrect": false
+        },
+        {
+          "text": "<img src=\"poza.jpg\">",
+          "isCorrect": true
+        },
+        {
+          "text": "<img src=\"poza.jpg\"/>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 7,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele tag-uri HTML sunt deprecated în HTML5:",
       "options": [
@@ -137,7 +160,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele categorii de aplicații se pot folosi de DOCTYPE pentru a \"înțelege\" mai bine documentul HTML:",
       "options": [
@@ -160,7 +183,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 9,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele elemente au toate display-ul implicit block?",
       "options": [
@@ -183,7 +206,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 10,
       "category": "HTML / DOM / CSS",
       "text": "Pentru a defini o listă ordonată a căror itemi sunt precedați de litere din alfabetul grec în CSS se folosește:",
       "options": [
@@ -202,7 +225,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 11,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele elemente au display-ul implicit inline?",
       "options": [
@@ -225,7 +248,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 12,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele afirmații sunt adevărate:",
       "options": [
@@ -244,7 +267,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "category": "HTML / DOM / CSS",
       "text": "Dându-se două containere, unul părinte și unul fiu, care dintre următoarele poziționări are/au sens:",
       "options": [
@@ -267,7 +290,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 14,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele informații despre tagul <title> sunt adevărate?",
       "options": [
@@ -290,7 +313,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 15,
       "category": "HTML / DOM / CSS",
       "text": "Care sunt asemănările și diferențele dintre atributele id și name?",
       "options": [
@@ -304,7 +327,7 @@
         },
         {
           "text": "atributul name se folosește pentru referirea unui element din CSS/JavaScript",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "două elemente HTML pot avea același nume, dar nu pot avea același id",
@@ -317,7 +340,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 16,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre sintaxele CSS de mai jos este corectă/sunt corecte?",
       "options": [
@@ -344,7 +367,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 17,
       "category": "HTML / DOM / CSS",
       "text": "Care dintre următoarele tag-uri este folosit pentru definirea de stiluri CSS interne?",
       "options": [
@@ -367,7 +390,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": 18,
       "category": "HTML / DOM / CSS",
       "text": "#RRAABB este un cod de culoare valid?",
       "options": [
@@ -390,13 +413,13 @@
       ]
     },
     {
-      "id": 18,
+      "id": 19,
       "category": "HTML / DOM / CSS",
       "text": "Considerând următoarele elemente html: <div class=\"info\">John Doe</div> <div class=\"info number\" id=\"age\">25</div> Ce selector CSS ar selecta doar cel de-al doilea div (cel cu conținutul \"25\")?",
       "options": [
         {
           "text": ".info.number",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": ".info .number",
@@ -404,16 +427,16 @@
         },
         {
           "text": ".info[id]",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": ".info #age",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 19,
+      "id": 20,
       "category": "HTML / DOM / CSS",
       "text": "Unde se poate defini un stil CSS pentru o anumită clasă?",
       "options": [
@@ -432,7 +455,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": 21,
       "category": "HTML / DOM / CSS",
       "text": "Fie următoarea secvență de cod HTML/CSS. Pe ce fundal va fi afișat textul \"Cocosul canta\"?\n<style type=\"text/css\">\n#id2 {\nbackground-color: blue;\n}\ndiv #id1 .class2 {\nbackground-color: green;\n}\ndiv .class1 #id2 {\nbackground-color: yellow;\n}\n#id1 {\nbackground-color: red;\n}\n</style>\n<div>\n<div class=\"class1\" id=\"id1\">\n<div class=\"class2\" id=\"id2\">\nCocosul canta\n</div>\n</div>\n</div>",
       "options": [
@@ -455,7 +478,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": 22,
       "category": "HTML / DOM / CSS",
       "text": "Dacă sunt definite următoarele stiluri: <style> #id1 { height: 100px; background-color: red; } </style> <style> #id1 { background-color: blue; } </style> Care va fi culoarea și înălțimea div-ului cu id-ul \"id1\"?",
       "options": [
@@ -474,7 +497,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": 23,
       "category": "HTML / DOM / CSS",
       "text": "În care dintre următoarele limbaje este possibile crearea unei animații care să apară pe ecranul utilizatorului?",
       "options": [
@@ -497,9 +520,9 @@
       ]
     },
     {
-      "id": 23,
+      "id": 24,
       "category": "HTML / DOM / CSS",
-      "text": "Ce trebuie adăugat următorului cod HTML pentru a fi corect? (context: o intrebare referitoare la atribute tabel)",
+      "text": "Ce trebuie adăugat următorului cod HTML pentru a fi corect?\n<table style=\"width:100%\">\n<tr>\n<th>Company</th>\n<th>Contact</th>\n<th>Country</th>\n</tr>\n<tr>\n<td>Alfreds Futterkiste</td>\n<td>Maria Anders</td>\n<td>Germany</td>\n<td>Optional</td>\n</tr>\n</table>",
       "options": [
         {
           "text": "rowspan=\"2\" în tagul th de la Country",
@@ -520,7 +543,7 @@
       ]
     },
     {
-      "id": 24,
+      "id": 25,
       "category": "HTML / DOM / CSS",
       "text": "Unde se va putea deschide resursa cerută de următoarea ancoră? <a href=\"www.google.com\" target=\"nume1\" />",
       "options": [
@@ -534,12 +557,12 @@
         },
         {
           "text": "Într-un nou tab sau în același tab în care s-a deschis la apăsarea trecută",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 25,
+      "id": 26,
       "category": "HTML / DOM / CSS",
       "text": "Care este motivul de utilizare al sprite-urilor?",
       "options": [
@@ -553,12 +576,12 @@
         },
         {
           "text": "Realizarea de animații",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 26,
+      "id": 27,
       "category": "HTML / DOM / CSS",
       "text": "Poziționarea relative este folosită pentru:",
       "options": [
@@ -572,7 +595,7 @@
         },
         {
           "text": "un container părinte care are elemente fiu poziționate absolut",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "a poziționa/muta un element în diferite direcții relativ la poziția sa normală",
@@ -581,7 +604,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": 28,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele cuvinte/caractere nu sunt rezervate în JavaScript și se pot folosi ca și nume de variabile?",
       "options": [
@@ -604,7 +627,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": 29,
       "category": "JavaScript & jQuery",
       "text": "Ce face următoarea secvență de cod: $('li:first').addClass('patrat').addClass('deplasat').addClass('colorat');",
       "options": [
@@ -627,7 +650,7 @@
       ]
     },
     {
-      "id": 29,
+      "id": 30,
       "category": "JavaScript & jQuery",
       "text": "Ce face următoarea secvență de cod: $(':not(p)').addClass('patrat').addClass('colorat');",
       "options": [
@@ -650,7 +673,7 @@
       ]
     },
     {
-      "id": 30,
+      "id": 31,
       "category": "JavaScript & jQuery",
       "text": "Ce se înțelege prin scop global în JavaScript?",
       "options": [
@@ -673,7 +696,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": 32,
       "category": "JavaScript & jQuery",
       "text": "În funcție de context, în jQuery $(this) poate fi folosit pentru:",
       "options": [
@@ -687,7 +710,7 @@
         },
         {
           "text": "pentru a construi un wrapper jQuery în jurul obiectului window",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "a construi un wrapper jQuery în jurul obiectului pe care se apelează un eveniment în interiorul funcției de tratare a evenimentului",
@@ -696,7 +719,7 @@
       ]
     },
     {
-      "id": 32,
+      "id": 33,
       "category": "JavaScript & jQuery",
       "text": "Cum se declară corect un array în JavaScript?",
       "options": [
@@ -719,7 +742,7 @@
       ]
     },
     {
-      "id": 33,
+      "id": 34,
       "category": "JavaScript & jQuery",
       "text": "Unde se poate insera cod JavaScript în cadrul unui document HTML?",
       "options": [
@@ -738,7 +761,7 @@
       ]
     },
     {
-      "id": 34,
+      "id": 35,
       "category": "JavaScript & jQuery",
       "text": "Cum se inserează corect un fișier extern JavaScript denumit test.js într-un document HTML?",
       "options": [
@@ -761,7 +784,7 @@
       ]
     },
     {
-      "id": 35,
+      "id": 36,
       "category": "JavaScript & jQuery",
       "text": "În JavaScript typeof 1/0 este NaN pentru că:",
       "options": [
@@ -784,7 +807,7 @@
       ]
     },
     {
-      "id": 36,
+      "id": 37,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele afirmații referitoare la filtrele de vizibilitate sunt adevărate?",
       "options": [
@@ -811,7 +834,7 @@
       ]
     },
     {
-      "id": 37,
+      "id": 38,
       "category": "JavaScript & jQuery",
       "text": "Ce face următoarea secvență de cod: var content = $('li').html(); $('li').append('<em> ' + content + '</em>');",
       "options": [
@@ -838,7 +861,7 @@
       ]
     },
     {
-      "id": 38,
+      "id": 39,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele expresii jQuery se pot folosi interschimbabil?",
       "options": [
@@ -877,7 +900,7 @@
       ]
     },
     {
-      "id": 39,
+      "id": 40,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele informații despre plugin-urile jQuery sunt adevărate:",
       "options": [
@@ -895,12 +918,12 @@
         },
         {
           "text": "Unele plugin-uri jQuery permit incadrarea librăriei de pe diversele CDN-uri (Content Delivery Network)",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 40,
+      "id": 41,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele reprezintă specificități ale unor metode din API-ul jQuery?",
       "options": [
@@ -923,7 +946,7 @@
       ]
     },
     {
-      "id": 41,
+      "id": 42,
       "category": "JavaScript & jQuery",
       "text": "Ce face următoarea secvență de cod: $('ul:has(li)').addClass('patrat').addClass('deplasat').addClass('colorat');",
       "options": [
@@ -950,7 +973,7 @@
       ]
     },
     {
-      "id": 42,
+      "id": 43,
       "category": "JavaScript & jQuery",
       "text": "Cum se afișează un mesaj prin intermediul unei ferestre de dialog modale în JavaScript?",
       "options": [
@@ -973,7 +996,7 @@
       ]
     },
     {
-      "id": 43,
+      "id": 44,
       "category": "JavaScript & jQuery",
       "text": "O variabilă x ce conține valoarea numerică 7 poate fi declarată în JavaScript astfel:",
       "options": [
@@ -987,7 +1010,7 @@
         },
         {
           "text": "x= new Number(7)",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "let x = 7",
@@ -1000,7 +1023,7 @@
       ]
     },
     {
-      "id": 44,
+      "id": 45,
       "category": "JavaScript & jQuery",
       "text": "În care element HTML se plasează codul JavaScript?",
       "options": [
@@ -1019,7 +1042,7 @@
       ]
     },
     {
-      "id": 45,
+      "id": 46,
       "category": "JavaScript & jQuery",
       "text": "Ce evenimente se generează la un click de mouse pe un element în cadrul documentului?",
       "options": [
@@ -1042,7 +1065,7 @@
       ]
     },
     {
-      "id": 46,
+      "id": 47,
       "category": "JavaScript & jQuery",
       "text": "Ce se va afișa în consola browserului după executarea următorului cod Javascript?\nif (1 === '1') { console.log(\"1 === '1'\"); }\nelse if (1 == true) { console.log(\"1 == true\"); }\nelse if (1 === 1.0) { console.log(\"1 === 1.0\"); }",
       "options": [
@@ -1065,7 +1088,7 @@
       ]
     },
     {
-      "id": 47,
+      "id": 48,
       "category": "JavaScript & jQuery",
       "text": "Cum se ascund toate div-urile din pagină folosind jQuery?",
       "options": [
@@ -1088,7 +1111,7 @@
       ]
     },
     {
-      "id": 48,
+      "id": 49,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Ce indică un cod de răspuns de forma 3xx trimis prin intermediul protocolului HTTP de un server web?",
       "options": [
@@ -1111,7 +1134,7 @@
       ]
     },
     {
-      "id": 49,
+      "id": 50,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Un formular care conține un input de tip file trebuie:",
       "options": [
@@ -1138,7 +1161,7 @@
       ]
     },
     {
-      "id": 50,
+      "id": 51,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Pentru a redirecționa automat browser-ul spre un nou URL, server-ul poate:",
       "options": [
@@ -1152,7 +1175,7 @@
         },
         {
           "text": "trimite ca și conținut HTML clientului un link de forma <a href=\"http://url-nou\"> și simulează din JavaScript un click de mouse pe acest link",
-          "isCorrect": true
+          "isCorrect": false
         },
         {
           "text": "răspunde clientului cu un cod de răspuns de forma 3xx împreuna cu un header Location",
@@ -1165,7 +1188,7 @@
       ]
     },
     {
-      "id": 51,
+      "id": 52,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele afirmații despre metoda HTTP POST sunt adevărate:",
       "options": [
@@ -1184,7 +1207,7 @@
       ]
     },
     {
-      "id": 52,
+      "id": 53,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele sunt adevărate despre un server web:",
       "options": [
@@ -1203,7 +1226,7 @@
       ]
     },
     {
-      "id": 53,
+      "id": 54,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre informațiile de mai jos despre atributele readonly și disabled sunt adevărate?",
       "options": [
@@ -1222,7 +1245,7 @@
       ]
     },
     {
-      "id": 54,
+      "id": 55,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele metode HTTP nu presupun trimiterea de conținut după antete în cadrul unui răspuns HTTP:",
       "options": [
@@ -1245,7 +1268,7 @@
       ]
     },
     {
-      "id": 55,
+      "id": 56,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele metode HTTP nu presupun trimiterea de conținut în cadrul unei cereri HTTP?",
       "options": [
@@ -1268,7 +1291,7 @@
       ]
     },
     {
-      "id": 56,
+      "id": 57,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele antete sunt obligatorii pentru o cerere HTTP în cazul folosirii protocolului HTTP/1.1:",
       "options": [
@@ -1291,7 +1314,7 @@
       ]
     },
     {
-      "id": 57,
+      "id": 58,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre informațiile de mai jos despre un URL accesat prin POST sunt adevărate:",
       "options": [
@@ -1310,7 +1333,7 @@
       ]
     },
     {
-      "id": 58,
+      "id": 59,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Un client face o cerere iar serverul îi răspunde cu \"404 Not Found\". Care dintre următoarele afirmații sunt adevărate:",
       "options": [
@@ -1329,7 +1352,7 @@
       ]
     },
     {
-      "id": 59,
+      "id": 60,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Un URL de pe back-end poate fi invocat (cerut) atât prin GET cât și prin POST:",
       "options": [
@@ -1348,7 +1371,7 @@
       ]
     },
     {
-      "id": 60,
+      "id": 61,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Pe ce nivel al stivei TCP/IP se situează protocolul HTTP?",
       "options": [
@@ -1371,7 +1394,7 @@
       ]
     },
     {
-      "id": 61,
+      "id": 62,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Care dintre următoarele reprezintă un avantaj al metodei GET față de POST?",
       "options": [
@@ -1394,31 +1417,35 @@
       ]
     },
     {
-      "id": 62,
+      "id": 63,
       "category": "HTTP, Servere Web & Formulare",
-      "text": "Cărui fișier i se trimit datele când se dă submit la următorul formular?",
+      "text": "Cărui fișier i se trimit datele când se dă submit la următorul formular?\n<form>\n<input type=\"text\" id=\"fname\" name=\"fname\"><br>\n<input type=\"text\" id=\"lname\" name=\"lname\"><br><br>\n<input type=\"submit\" value=\"Submit\">\n</form>",
       "options": [
         {
           "text": "Datele nu se trimit deloc",
           "isCorrect": false
         },
         {
-          "text": "Unui fișier setat într-un fișier de configurare",
-          "isCorrect": false
-        },
-        {
           "text": "Scriptului de pe backend care afișează formularul",
           "isCorrect": true
+        },
+        {
+          "text": "Unui fișier setat într-un fișier de configurare",
+          "isCorrect": false
         }
       ]
     },
     {
-      "id": 63,
+      "id": 64,
       "category": "HTTP, Servere Web & Formulare",
-      "text": "Care este un query string posibil dacă se dă submit la următorul formular?",
+      "text": "Care este un query string posibil dacă se dă submit la următorul formular?\n<form>\n<input type=\"text\" id=\"fname\" name=\"fname\"><br>\n<input type=\"text\" id=\"lname\"><br>\n<input type=\"email\" id=\"email\" name=\"email\" validate><br>\n<input type=\"submit\" value=\"Submit\">\n</form>",
       "options": [
         {
           "text": "\"fname=Ion&lname=Popescu&email=ionpopescu@gmail.com\"",
+          "isCorrect": false
+        },
+        {
+          "text": "\"fname=Ion&email=ionpopescu@gmail.com\"",
           "isCorrect": false
         },
         {
@@ -1427,16 +1454,12 @@
         },
         {
           "text": "\"fname=Ion&email=ionpopescu\"",
-          "isCorrect": false
-        },
-        {
-          "text": "\"fname=Ion&email=ionpopescu@gmail.com\"",
           "isCorrect": true
         }
       ]
     },
     {
-      "id": 64,
+      "id": 65,
       "category": "HTTP, Servere Web & Formulare",
       "text": "Cum este posibil să existe 2 butoane de submit într-un formular?",
       "options": [
@@ -1455,7 +1478,7 @@
       ]
     },
     {
-      "id": 65,
+      "id": 66,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "De pe client se dorește salvarea unor date despre o persoană (numele și vârsta acesteia) folosind un apel AJAX realizat prin metoda HTTP GET. Care dintre următoarele apeluri realizează acest lucru:",
       "options": [
@@ -1474,7 +1497,7 @@
       ]
     },
     {
-      "id": 66,
+      "id": 67,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Un apel AJAX se poate face către o resursă statică oferită de end-point-ul de pe server?",
       "options": [
@@ -1493,7 +1516,7 @@
       ]
     },
     {
-      "id": 67,
+      "id": 68,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "În ce condiții metoda send pe un obiect AJAX se apelează întotdeauna cu parametrul șirul vid?",
       "options": [
@@ -1512,7 +1535,7 @@
       ]
     },
     {
-      "id": 68,
+      "id": 69,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Care dintre următoarele metode jQuery folosesc AJAX:",
       "options": [
@@ -1535,7 +1558,7 @@
       ]
     },
     {
-      "id": 69,
+      "id": 70,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Aranjați în ordine, de la cea mai simplă și puțin customizabilă, la cea mai configurabilă și parametrizabilă următoarele funcții care permit realizarea unui apel AJAX din jQuery:",
       "options": [
@@ -1558,7 +1581,7 @@
       ]
     },
     {
-      "id": 70,
+      "id": 71,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Pentru a verifica succesul unui apel AJAX trebuie ca:",
       "options": [
@@ -1581,7 +1604,7 @@
       ]
     },
     {
-      "id": 71,
+      "id": 72,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Care dintre următoarele reprezintă proprietăți membre ale unui obiect de tipul XMLHttpRequest:",
       "options": [
@@ -1600,7 +1623,7 @@
       ]
     },
     {
-      "id": 72,
+      "id": 73,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Un apel AJAX este în starea 2 dacă:",
       "options": [
@@ -1623,7 +1646,7 @@
       ]
     },
     {
-      "id": 73,
+      "id": 74,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Funcția specificată ca și valoare pentru proprietatea onreadystatechange se apelează:",
       "options": [
@@ -1642,7 +1665,7 @@
       ]
     },
     {
-      "id": 74,
+      "id": 75,
       "category": "AJAX (Asynchronous JavaScript and XML)",
       "text": "Răspunsul sosit printr-un apel AJAX poate fi:",
       "options": [
@@ -1665,7 +1688,7 @@
       ]
     },
     {
-      "id": 75,
+      "id": 76,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele sunt scriptlet-uri valide in PHP?",
       "options": [
@@ -1688,7 +1711,7 @@
       ]
     },
     {
-      "id": 76,
+      "id": 77,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Un fișier PHP poate fi executat:",
       "options": [
@@ -1711,7 +1734,7 @@
       ]
     },
     {
-      "id": 77,
+      "id": 78,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Dându-se două variabile $a și $b, cum se poate interschimba valoarea acestora în PHP?",
       "options": [
@@ -1754,7 +1777,7 @@
       ]
     },
     {
-      "id": 78,
+      "id": 79,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "În PHP return este folosit pentru:",
       "options": [
@@ -1777,7 +1800,7 @@
       ]
     },
     {
-      "id": 79,
+      "id": 80,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Ce face funcția session_start() în PHP?",
       "options": [
@@ -1800,7 +1823,7 @@
       ]
     },
     {
-      "id": 80,
+      "id": 81,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Fie două variabile $a și $b în PHP ce conțin șiruri de caractere. Aceste două șiruri se pot concatena folosind:",
       "options": [
@@ -1823,7 +1846,7 @@
       ]
     },
     {
-      "id": 81,
+      "id": 82,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele declarații este corectă pentru definirea tabloului $fructe în PHP?",
       "options": [
@@ -1850,7 +1873,7 @@
       ]
     },
     {
-      "id": 82,
+      "id": 83,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Unde se poate folosi funcția header în PHP?",
       "options": [
@@ -1869,7 +1892,7 @@
       ]
     },
     {
-      "id": 83,
+      "id": 84,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Care dintre următoarele afirmații sunt adevărate:",
       "options": [
@@ -1888,7 +1911,7 @@
       ]
     },
     {
-      "id": 84,
+      "id": 85,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Cum se introduc comentarii într-un scriptlet PHP?",
       "options": [
@@ -1911,7 +1934,7 @@
       ]
     },
     {
-      "id": 85,
+      "id": 86,
       "category": "PHP (Hypertext Preprocessor)",
       "text": "Cum se pot obține parametrii în backend în condițiile în care următoarea ancoră este apăsată? <a href=\"www.siteulmeu.com?addFav=1\">Adauga la favorite</a>",
       "options": [
@@ -1934,7 +1957,7 @@
       ]
     },
     {
-      "id": 86,
+      "id": 87,
       "category": "Java (Servlets & Arhitectură)",
       "text": "Conectarea la o bază de date într-o aplicație web Java se recomandă a fi făcută:",
       "options": [
@@ -1953,7 +1976,7 @@
       ]
     },
     {
-      "id": 87,
+      "id": 88,
       "category": "Java (Servlets & Arhitectură)",
       "text": "Parametrii de configurare ai unei aplicații web Java sunt preleați din fișierul de configurare ai aplicației web în cadrul metodei:",
       "options": [
@@ -1972,7 +1995,7 @@
       ]
     },
     {
-      "id": 88,
+      "id": 89,
       "category": "Java (Servlets & Arhitectură)",
       "text": "O bază de date embedded în cadrul unei aplicații web Java se recomandă a fi memorată:",
       "options": [
@@ -1991,7 +2014,7 @@
       ]
     },
     {
-      "id": 89,
+      "id": 90,
       "category": "Java (Servlets & Arhitectură)",
       "text": "În câte instanțe se instanțiază un servlet?",
       "options": [
@@ -2010,7 +2033,7 @@
       ]
     },
     {
-      "id": 90,
+      "id": 91,
       "category": "Java (Servlets & Arhitectură)",
       "text": "O sesiune într-o aplicație web Java se termină cu:",
       "options": [
@@ -2029,7 +2052,7 @@
       ]
     },
     {
-      "id": 91,
+      "id": 92,
       "category": "Securitate Web",
       "text": "Injecțiile JavaScript se datorează:",
       "options": [
@@ -2052,7 +2075,7 @@
       ]
     },
     {
-      "id": 92,
+      "id": 93,
       "category": "Securitate Web",
       "text": "Cum se poate \"fura\" un cookie de sesiune al unui alt utilizator?",
       "options": [
@@ -2071,7 +2094,7 @@
       ]
     },
     {
-      "id": 93,
+      "id": 94,
       "category": "Securitate Web",
       "text": "Pentru evitarea injecțiilor SQL în PHP 7 se recomandă:",
       "options": [
@@ -2090,7 +2113,7 @@
       ]
     },
     {
-      "id": 94,
+      "id": 95,
       "category": "Securitate Web",
       "text": "Care dintre următoarele reprezintă măsuri pentru evitarea injecțiilor SQL:",
       "options": [
@@ -2113,7 +2136,7 @@
       ]
     },
     {
-      "id": 95,
+      "id": 96,
       "category": "Securitate Web",
       "text": "Care dintre următoarele reprezintă măsuri pentru evitarea vulnerabilităților de tip XSS:",
       "options": [
@@ -2136,7 +2159,7 @@
       ]
     },
     {
-      "id": 96,
+      "id": 97,
       "category": "Securitate Web",
       "text": "Care dintre următoarele funcții PHP este folosită pentru a preveni vulnerabilitățile de tip Cross-Site Scripting (XSS)?",
       "options": [
@@ -2155,7 +2178,7 @@
       ]
     },
     {
-      "id": 97,
+      "id": 98,
       "category": "Securitate Web",
       "text": "Care dintre următoarele vulnerabilități ar putea fi exploatată pentru a fura sesiunea unui utilizator autentificat?",
       "options": [
@@ -2174,7 +2197,7 @@
       ]
     },
     {
-      "id": 98,
+      "id": 99,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele expresii jQuery se pot folosi interschimbabil?",
       "options": [
@@ -2193,7 +2216,7 @@
       ]
     },
     {
-      "id": 99,
+      "id": 100,
       "category": "JavaScript & jQuery",
       "text": "Care dintre următoarele expresii jQuery se pot folosi interschimbabil?",
       "options": [
