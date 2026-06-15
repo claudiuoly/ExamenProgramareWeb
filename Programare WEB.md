@@ -278,8 +278,8 @@ div .class1 #id2 {
 **32. În funcție de context, în jQuery `$(this)` poate fi folosit pentru:**
 
 - a returna obiectul JavaScript de bază
-- a construi un wrapper jQuery în jurul documentului
-- a construi un wrapper jQuery în jurul obiectului `window`
+- ✅ a construi un wrapper jQuery în jurul documentului
+- ✅ a construi un wrapper jQuery în jurul obiectului `window`
 - ✅ a construi un wrapper jQuery în jurul obiectului pe care se apelează un eveniment
 
 **33. Cum se declară corect un array în JavaScript?**
@@ -781,4 +781,11 @@ else if (1 === 1.0) { console.log("1 === 1.0"); }
 - `$(document.myelem)` și `$(document.getElementById("myelem"))`
 - ✅ `$` și `jQuery`
 - `$(document).myelem` și `$("#myelem")[0]`
+
+**101. În jQuery `$(this)` se folosește pentru:** *(variantă fără „în funcție de context")*
+
+- a returna obiectul JavaScript de bază
+- a construi un wrapper jQuery în jurul documentului
+- a construi un wrapper jQuery în jurul obiectului `window`
+- ✅ a construi un wrapper jQuery în jurul obiectului pe care se apelează un eveniment
 

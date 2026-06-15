@@ -1,6 +1,6 @@
 # Grile Programare Web — Angular (stil Moodle)
 
-Aplicație simplă pentru exersarea celor **100 de grile** din `Toate Grilele.txt`, fără login.
+Aplicație simplă pentru exersarea celor **101 de grile** din `Toate Grilele.txt`, fără login.
 
 ## Caracteristici
 

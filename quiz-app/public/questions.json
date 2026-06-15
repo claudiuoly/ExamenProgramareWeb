@@ -1,6 +1,6 @@
 {
   "title": "Grile Programare Web",
-  "totalQuestions": 100,
+  "totalQuestions": 101,
   "questions": [
     {
       "id": 1,
@@ -706,11 +706,11 @@
         },
         {
           "text": "pentru a construi un wrapper jQuery în jurul documentului",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "pentru a construi un wrapper jQuery în jurul obiectului window",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "a construi un wrapper jQuery în jurul obiectului pe care se apelează un eveniment în interiorul funcției de tratare a evenimentului",
@@ -2239,6 +2239,29 @@
         {
           "text": "$(document).myelem și $(\"#myelem\")[0]",
           "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "category": "JavaScript & jQuery",
+      "text": "În jQuery $(this) se folosește pentru:",
+      "options": [
+        {
+          "text": "a returna obiectul JavaScript de bază în jurul căruia este construit obiectul jQuery curent",
+          "isCorrect": false
+        },
+        {
+          "text": "pentru a construi un wrapper jQuery în jurul documentului",
+          "isCorrect": false
+        },
+        {
+          "text": "pentru a construi un wrapper jQuery în jurul obiectului window",
+          "isCorrect": false
+        },
+        {
+          "text": "a construi un wrapper jQuery în jurul obiectului pe care se apelează un eveniment în interiorul funcției de tratare a evenimentului",
+          "isCorrect": true
         }
       ]
     }
