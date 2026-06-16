@@ -182,9 +182,9 @@ div .class1 #id2 {
 </tr>
 </table>
 - rowspan="2" în tagul th de la Country
-- Nimic, tabelul se afișează
+- [X] Nimic, tabelul se afișează
 - rowspan="2" și colspan="2" în tagul th de la Country
-- [X] colspan="2" în tagul th de la Country
+- colspan="2" în tagul th de la Country
 
 25. Unde se va putea deschide resursa cerută de următoarea ancoră? <a href="www.google.com" target="nume1" />
 - Nu se va deschide

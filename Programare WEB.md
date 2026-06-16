@@ -220,9 +220,9 @@ div .class1 #id2 {
 ```
 
 - `rowspan="2"` în tagul `th` de la Country
-- Nimic
+- ✅ Nimic, tabelul se afișează
 - `rowspan="2"` și `colspan="2"`
-- ✅ `colspan="2"` în tagul `th` de la Country
+- `colspan="2"` în tagul `th` de la Country
 
 **25. Unde se va deschide resursa cerută de `<a href="www.google.com" target="nume1" />`?**
 

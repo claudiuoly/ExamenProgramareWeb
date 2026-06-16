@@ -530,7 +530,7 @@
         },
         {
           "text": "Nimic, tabelul se afișează",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "text": "rowspan=\"2\" și colspan=\"2\" în tagul th de la Country",
@@ -538,7 +538,7 @@
         },
         {
           "text": "colspan=\"2\" în tagul th de la Country",
-          "isCorrect": true
+          "isCorrect": false
         }
       ]
     },
